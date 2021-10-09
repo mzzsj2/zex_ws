@@ -1,0 +1,20 @@
+<launch>
+    
+    <param name="bag_path" type="string" value="/home/zsj/dataset/0917/0917_2.bag" />
+
+    <param name="map_path" type="string" value="/home/zsj/dataset/0917/" />
+
+    <param name="map_dist" type="double" value="1" />
+
+    <param name="submap_size" type="int" value="60" />
+
+    <param name="save_map" type="bool" value="1" />
+
+    <node pkg="mapping" type="map" name="map" output="screen"/>
+
+    <arg name="rviz" default="true" />
+    <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find mapping)/rviz/mapping.rviz" />
+    </group>
+
+</launch>

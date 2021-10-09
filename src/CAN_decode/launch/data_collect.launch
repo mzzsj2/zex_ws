@@ -1,0 +1,11 @@
+<launch>
+
+    <node pkg="can_decode" type="can_decode" name="can_decode" output="screen" />
+
+    <include file= "$(find rslidar_sdk)/launch/start.launch" />
+
+    <node pkg="tf" type="static_transform_publisher" name="velodyne_to_imu_init"  args="0 0 0 1.570795  0   0 /imu_init  /rslidar 10" />
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find can_decode)/rviz/visu.rviz" />
+
+</launch>

@@ -1,0 +1,12 @@
+<launch>
+    
+    <rosparam command="load" file="$(find location)/config/config.yaml"/>
+
+    <node pkg="location" type="location" name="location" output="screen"/>
+
+    <arg name="rviz" default="true" />
+    <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find location)/rviz/location.rviz" />
+    </group>
+
+</launch>

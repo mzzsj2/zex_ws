@@ -1,0 +1,6 @@
+<launch>
+
+    <node pkg="can_decode" type="can_decode" name="can_decode"/>
+
+
+</launch>

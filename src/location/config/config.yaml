@@ -1,0 +1,25 @@
+map_path: "/home/zsj/dataset/0917/map.pcd"
+
+odometry_topic_name: "/odometry"
+
+lidar_topic_name: "/rslidar_points"
+
+rtk_topic_name: "/rtk_data"
+
+world:
+  longitude: 121.47964720
+  latitude: 30.9546
+  height: 17.737
+
+map:
+  longitude: 121.4795727
+  latitude: 30.9541813
+  height: 17.691
+  heading: 171.11
+  pitch: -0.24
+  roll: 1.33
+
+# Extrinsics (lidar -> IMU)
+extrinsicTrans: [0.0, 0.0, 0.0]
+# Z Y X
+extrinsicRot: [90, 0, 0]
